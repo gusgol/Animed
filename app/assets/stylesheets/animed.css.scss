@@ -5,6 +5,7 @@ body {
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 
+
 .animed-h1-title {
   color: gray;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -44,6 +45,26 @@ body {
 
 .animed-top li {
   font-size: 1.5em;
+}
+
+.animed-search-form {
+  display: inline;
+}
+.animed-search-field {
+  display: inline;
+  width: 78%;
+  height: 42px;
+  font-size: 1.3em;
+  margin-top: 2px;
+  position: relative;
+  bottom: -3px;
+  border-radius: 5px;
+
+}
+
+.animed-search-btn {
+  display: inline;
+  width: 10%;
 }
 
 
@@ -120,3 +141,14 @@ body {
 
 }
 
+@media screen and (max-width: 430px) {
+  .animed-search-field { 
+    width: 62%;
+  }
+  .animed-search-btn {
+    display: inline;
+    width: 17%;
+  }
+
+}
+  
