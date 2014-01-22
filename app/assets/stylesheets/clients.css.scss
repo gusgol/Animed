@@ -1,0 +1,61 @@
+// Place all the styles related to the Clients controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.client-record {
+	background-color: #428bca;
+	padding: 18px 30px;
+	margin: 10px 0px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	height: 95px;
+	width: 470px;
+	font-size: 1.5em;
+}
+
+.client-record h2 {
+	font-size: 1.0em;
+	color: white;
+	margin: 0;
+}
+
+.client-record p {
+	font-size: 0.8em;
+	color: white;
+	margin: 0px;
+	line-height: 20px;
+}
+
+a:hover {
+  color: #2a6496;
+  text-decoration: none;
+
+  div {
+  	background-color: #E8870C;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.animed-animal-table:hover {
+	background-color: #E8870C;
+}
+
+/* Responsive: Portrait tablets and down */
+@media screen and (max-width: 768px) {
+	.client-record {
+		margin: 10px 0px;
+		max-width: 100%;
+	}
+}
+

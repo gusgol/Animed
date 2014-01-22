@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  client_id: 1
+  animal_id: 1
+  service_date: 2014-01-20
+  description: MyText
+  price: 9.99
+
+two:
+  name: MyString
+  client_id: 1
+  animal_id: 1
+  service_date: 2014-01-20
+  description: MyText
+  price: 9.99

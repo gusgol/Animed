@@ -1,0 +1,122 @@
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* Everything but the jumbotron gets side spacing for mobile first views */
+
+.animed-h1-title {
+  color: gray;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  border-bottom-style: solid;
+}
+
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+
+
+.animed-menu {
+  font-size: 1.5em;
+
+}
+
+.animed-top li {
+  font-size: 1.5em;
+}
+
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 865px;
+  }
+  .animed-content {
+    left: 50px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+.animed-title-header {
+  padding: 12px;
+  border-style: solid;
+  border-color: rgb(66, 139, 202);
+  margin: 20px 0;
+  border-radius: 6px;
+  
+  .animed-subtitle {
+    display: inline;
+
+    h2 {
+    display: inline;
+    }
+  }
+  
+  .animed-btn-plus {
+    display: inline;
+    float: right;
+    margin: 5px;
+  }
+
+  span {
+    font-size: 1.5em;
+  }
+}
+
+.animed-form-label {
+  padding-right: 0px;
+}
+
+.animed-btn-back {
+  display: inline;
+  float: right;
+  
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+
+
+}
+
+@media screen and (max-width: 768px) {
+  .animad-app-title {
+    display: none;
+  }
+
+}
+

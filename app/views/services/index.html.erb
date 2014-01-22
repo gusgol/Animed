@@ -1,0 +1,32 @@
+<h1 class="animed-h1-title">Serviços</h1>
+
+<table class="table table-condensed table-bordered">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Data</th>
+      <th>Cliente</th>
+      <th>Animal</th>
+      <th>Preço</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @services.each do |service| %>
+      <tr class= "animed-animal-table" onclick="location.href='/services/<%= service.id %>'">
+        <td><%= service.name %></td>
+        <td><%= service.service_date.strftime("%d/%m/%y") %></td>
+        <td><%= service.client.name %></td>
+        <% if service.animal_id.nil? %>
+            <td>-</td>
+          <% else %>
+            <td><%= service.animal.name %></td>
+          <% end %>
+        <td><%= number_to_currency(service.price, :unit => "R$") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+

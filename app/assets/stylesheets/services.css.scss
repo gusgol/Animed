@@ -1,0 +1,10 @@
+// Place all the styles related to the Services controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Responsive: Portrait tablets and down */
+	@media screen and (max-width: 768px) {
+	.animed-service-hidden {
+		display: none;
+	}
+}

@@ -1,0 +1,17 @@
+<%= link_to (new_client_path) do %>
+  <button type="button" class="btn btn-default btn-lg animed-btn"><i class = "fa fa-plus"></i> Novo Cliente</button>
+<% end %>
+
+<% @clients.each do |client| %>
+  <%= link_to(client) do %>
+    <div class = "client-record">
+      <h2><%= client.name %></h2>
+      <p><%= client.cellphone %></p>
+      <p><%= client.email %></p>
+    </div>
+   <% end %> 
+<% end %>
+
+
+
+

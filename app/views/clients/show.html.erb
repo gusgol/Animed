@@ -1,0 +1,110 @@
+<p id="notice"><%= notice %></p>
+
+<table class ="table table-bordered table-striped">
+  <tr>
+    <td><strong>Nome:</strong></td>
+    <td><strong><%= @client.name %></strong></td>
+  </tr>
+  <tr>
+    <td><strong>CPF:</strong></td>
+    <td><%= @client.cpf %></td>
+  </tr>
+  <tr>
+    <td><strong>Nascimento:</strong></td>
+    <td><%= @client.birthdate.strftime("%d/%m/%y") %></td>
+  </tr>
+  <tr>
+    <td><strong>Endereço:</strong></td>
+    <td><%= @client.address %></td>
+  </tr>
+  <tr>
+    <td><strong>Telefone:</strong></td>
+    <td><%= @client.telephone %></td>
+  </tr>
+  <tr>
+    <td><strong>Celular:</strong></td>
+    <td><%= @client.cellphone %></td>
+  </tr>
+  <tr>
+    <td><strong>E-mail:</strong></td>
+    <td><%= @client.email %></td>
+  </tr>
+</table>
+
+<div>
+  <%= link_to 'Editar', edit_client_path(@client) %> |
+  <%= link_to 'Voltar', clients_path %> |
+  <%= link_to 'Apagar', client_path(@client), method: :delete, data: { confirm: "Tem certeza que você quer apagar esse cliente?"} %> 
+  
+</div>
+
+<div class="animed-title-header">
+  <div class="animed-subtitle">
+    <h2>Animais</h2>
+  </div>
+  <div class="animed-btn-plus">
+    <%= link_to(new_animal_path(:client_id => @client.id)) do %>
+      <span><i class="fa fa-plus"></i></span>
+    <% end %>
+  </div>
+</div>
+
+<% animals = @client.animals.all %>
+<table class ="table table-bordered ">
+  <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Espécie</th>
+        <th>Raça</th>
+      </tr>
+  </thead>  
+  <tbody>
+    <% animals.each do |animal| %>   
+      <tr class= "animed-animal-table" onclick="location.href='/animals/<%= animal.id %>'">
+          <td><%= animal.name %></td>
+          <td><%= animal.species %></td>
+          <td><%= animal.race %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="animed-title-header">
+  <div class="animed-subtitle">
+    <h2>Serviços</h2>
+  </div>
+  <div class="animed-btn-plus">
+    <%= link_to(new_service_path(:client_id => @client.id)) do %>
+      <span><i class="fa fa-plus"></i></span>
+    <% end %>
+  </div>
+</div>
+
+<% services = @client.services.all %>
+<table class ="table table-bordered ">
+  <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Animal</th>
+        <th>Data</th>
+        <th>Descrição</th>
+        <th class="animed-service-hidden">Preço</th>
+      </tr>
+  </thead>  
+  <tbody>
+    <% services.each do |service| %>   
+      <tr class= "animed-animal-table" onclick="location.href='/services/<%= service.id %>'">
+          <td><%= service.name %></td>
+          <% if service.animal_id.nil? %>
+            <td>-</td>
+          <% else %>
+            <td><%= service.animal.name %></td>
+          <% end %>
+          <td><%= service.service_date.strftime("%d/%m/%y") %></td>
+          <td><%= service.description %></td>
+          <td class="animed-service-hidden"><%= number_to_currency(service.price, :unit => "R$") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

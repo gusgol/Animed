@@ -1,0 +1,42 @@
+
+<h1 class="animed-h1-title">Informações</h1>
+<p id="notice"><%= notice %></p>
+
+
+<table class ="table table-bordered table-striped">
+  <tr>
+    <td><strong>Nome:</strong></td>
+    <td><%= @service.name %></td>
+  </tr>
+
+  <tr>
+    <td><strong>Cliente:</strong></td>
+    <td><%= @service.client.name %></td>
+  </tr>
+
+  <% if !@service.animal_id.nil? %>
+    <tr>
+      <td><strong>Animal:</strong></td>
+      <td><%= @service.animal.name %></td>
+    </tr>
+  <% end %>
+
+  <tr>
+    <td><strong>Data:</strong></td>
+    <td><%= @service.service_date.strftime("%d/%m/%y") %></td>
+  </tr>
+
+  <tr>
+    <td><strong>Descrição:</strong></td>
+    <td><%= @service.description %></td>
+  </tr>
+
+  <tr>
+    <td><strong>Preço:</strong></td>
+    <td><%= @service.price %></td>
+  </tr>
+</table>
+
+<%= link_to 'Editar', edit_service_path(@service) %> |
+<%= link_to 'Voltar', services_path %> |
+<%= link_to 'Apagar', service_path(@service), method: :delete, data: { confirm: "Tem certeza que você quer apagar esse serviço?"} %> 
