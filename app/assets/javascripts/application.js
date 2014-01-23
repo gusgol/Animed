@@ -18,3 +18,8 @@
 // Loads all Bootstrap javascripts
 //= require bootstrap
 
+$(document).ready(function(){
+	$( "#animed-logo" ).click(function() {
+		alert( "Handler for .click() called." );
+	});
+});
