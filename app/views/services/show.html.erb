@@ -37,6 +37,6 @@
   </tr>
 </table>
 
-<%= link_to 'Editar', edit_service_path(@service) %> |
+<%= link_to 'Editar', { :action => 'edit', :id => @service, :client_id => @service.client_id, :animal_id => @service.animal_id } %> |
 <%= link_to 'Voltar', services_path %> |
 <%= link_to 'Apagar', service_path(@service), method: :delete, data: { confirm: "Tem certeza que você quer apagar esse serviço?"} %> 

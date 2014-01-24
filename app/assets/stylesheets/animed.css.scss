@@ -62,9 +62,25 @@ body {
 
 }
 
+.animed-search-field-100 {
+  display: inline;
+  width: 97%;
+  height: 42px;
+  font-size: 1.3em;
+  margin-top: 2px;
+  position: relative;
+  bottom: -3px;
+  border-radius: 5px;
+}
+
 .animed-search-btn {
   display: inline;
   width: 10%;
+}
+
+.animed-search-btn-100 {
+  display: inline;
+  width: 21%;
 }
 
 
@@ -139,6 +155,23 @@ body {
     display: none;
   }
 
+  .animed-search-btn-100 {
+    display: inline;
+    width: 21%;
+  }
+
+
+}
+
+@media screen and (max-width: 533px) {
+  .animed-search-btn-100 {
+    display: inline;
+    width: 20%;
+  }
+
+  .animed-searc-label {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 430px) {
@@ -148,6 +181,10 @@ body {
   .animed-search-btn {
     display: inline;
     width: 17%;
+  }
+
+  .animed-search-field { 
+    width: 78%;
   }
 
 }
