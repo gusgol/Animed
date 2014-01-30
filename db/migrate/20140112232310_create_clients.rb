@@ -7,8 +7,6 @@ class CreateClients < ActiveRecord::Migration
       t.string :telephone
       t.string :cellphone
       t.string :email
-      t.string :cellphone
-      t.string :email
       t.date :birthdate
       t.string :cpf
 
