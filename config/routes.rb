@@ -1,4 +1,5 @@
 Animed::Application.routes.draw do
+  devise_for :users
   resources :services
 
   resources :animals
@@ -11,7 +12,16 @@ Animed::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root :to => 'clients#index'
+  authenticated :user do
+    root :to => 'clients#index', :as => :authenticated_root
+  end
+  root :to => redirect('/login')
+
+  as :user do
+    get "/login" => "devise/sessions#new", :as => :login
+    get "/logout" => "devise/sessions#destroy", :as => :logout
+  end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

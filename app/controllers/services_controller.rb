@@ -1,6 +1,7 @@
 # coding: utf-8
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /services
   # GET /services.json

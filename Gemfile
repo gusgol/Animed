@@ -59,3 +59,6 @@ gem 'font-awesome-sass'
 
 #CarrierWave
 gem 'carrierwave'
+
+#Devise
+gem 'devise'
