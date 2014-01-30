@@ -62,3 +62,7 @@ gem 'carrierwave'
 
 #Devise
 gem 'devise'
+
+group :production, :staging do
+    gem 'rails_12factor'
+end
