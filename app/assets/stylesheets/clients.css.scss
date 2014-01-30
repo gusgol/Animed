@@ -8,7 +8,7 @@
 
 .client-record {
 	background-color: #428bca;
-	padding: 18px 45px;
+	padding: 18px 0px 80px 20px;
 	margin: 10px 0px;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
@@ -45,6 +45,25 @@ a:hover {
 	background-color: #E8870C;
 }
 
+.client-avatar {
+	margin-right: 10px;
+	font-size: 2.3em;
+	padding: 2px 13px;
+	border-radius: 10px;
+	background-color: white;
+	display: inline;
+
+	span {
+		padding: 3px;
+	}
+}
+
+.client-avatar-info {
+	float: right;
+	display: inline;
+	width: 75%;
+}
+
 /* Responsive: Portrait tablets and down */
 @media screen and (max-width: 768px) {
 	.client-record {
@@ -54,6 +73,10 @@ a:hover {
 
 	.animed-content-client {
   		width: 100%;
+	}
+
+	.client-record {
+		overflow: hidden;	
 	}
 
 }

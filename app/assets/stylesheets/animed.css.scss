@@ -169,22 +169,27 @@ body {
     width: 20%;
   }
 
+  .animed-search-field{
+    width: 76%;
+  }
   .animed-searc-label {
     display: none;
   }
 }
 
 @media screen and (max-width: 430px) {
-  .animed-search-field { 
-    width: 62%;
+  .animed-service-hide {
+    display: none;
   }
+
+
   .animed-search-btn {
     display: inline;
-    width: 17%;
+    width: 14%;
   }
 
   .animed-search-field { 
-    width: 78%;
+    width: 67%;
   }
 
 }

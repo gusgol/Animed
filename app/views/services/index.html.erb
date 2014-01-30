@@ -18,7 +18,7 @@
       <th>Data</th>
       <th>Cliente</th>
       <th>Animal</th>
-      <th>Preço</th>
+      <th class="animed-service-hide">Preço</th>
     </tr>
   </thead>
 
@@ -33,7 +33,7 @@
           <% else %>
             <td><%= service.animal.name %></td>
           <% end %>
-        <td><%= number_to_currency(service.price, :unit => "R$") %></td>
+        <td class="animed-service-hide"><%= number_to_currency(service.price, :unit => "R$") %></td>
       </tr>
     <% end %>
   </tbody>

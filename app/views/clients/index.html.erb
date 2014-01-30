@@ -18,9 +18,19 @@
 	<% @clients.each do |client| %>
 	  <%= link_to(client) do %>
 	    <div class = "client-record">
-	      <h2><%= client.name %></h2>
-	      <p><%= client.cellphone %></p>
-	      <p><%= client.email %></p>
+    		<div class="client-avatar">
+    			<% if client.gender == "Masculino" %>
+    				<span><i class="fa fa-male"></i></span>
+    			<% else %>
+    				<i class="fa fa-female"></i>
+    			<% end %>
+    		</div>
+    		<div class="client-avatar-info">
+				<h2><%= client.name %></h2>
+		    	<p><%= client.cellphone %></p>
+		    	<p><%= client.email %></p>
+    		</div>
+	    	
 	    </div>
 	   <% end %> 
 	<% end %>

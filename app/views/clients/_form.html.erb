@@ -18,6 +18,12 @@
     </div>
   </div>
   <div class="form-group">
+    <%= f.label "Sexo", :class => "col-sm-2 control-label animed-form-label" %>
+    <div class="col-sm-10">
+      <%= f.select :gender, options_for_select(%w[Masculino Feminino]), {} ,:class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
     <%= f.label "CPF", :class => "col-sm-2 control-label" %>
     <div class="col-sm-10">
       <%= f.text_field :cpf, :class => "form-control" %>
