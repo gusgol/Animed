@@ -2,7 +2,11 @@
 
 <div class="animed-animal-content">
   <div class="animed-animal-avatar">
-    <%= image_tag(@animal.image_url) if @animal.image_url.present? %>
+    <% if @animal.image_url.present? %>
+      <%= image_tag(@animal.image_url) %>
+    <% else %>
+      <%= image_tag("animal_default.jpg") %>
+    <% end %>
   </div>
   <div class="animed-animal-info">
 
