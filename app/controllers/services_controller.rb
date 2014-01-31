@@ -6,7 +6,7 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @services = Service.search(params[:search])
+    @services = Service.search(params[:search], params[:page])
   end
 
   # GET /services/1

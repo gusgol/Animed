@@ -4,11 +4,9 @@ class Animal < ActiveRecord::Base
 	
 	mount_uploader :image_url, ImageUrlUploader
 
-	def self.search(search)
-		if search
-			find(:all, :conditions => ['name LIKE ? OR species LIKE ? OR race LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"], :order => 'name')
-  		else
-    		find(:all, :order => 'name')
-  		end
+	def self.search(search, page)
+		paginate :per_page => 15, :page => page, 
+				 :conditions => ['name LIKE ? OR species LIKE ? OR race LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"], 
+				 :order => 'name'
 	end
 end

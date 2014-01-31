@@ -66,3 +66,9 @@ gem 'devise'
 group :production, :staging do
     gem 'rails_12factor'
 end
+
+#kaminari pagination
+gem 'kaminari'
+
+#will_paginate
+gem 'will_paginate', '~> 3.0'

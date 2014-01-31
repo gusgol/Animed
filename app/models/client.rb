@@ -4,11 +4,9 @@ class Client < ActiveRecord::Base
 	has_many :animals, dependent: :destroy
 	has_many :services, dependent: :destroy
 
-	def self.search(search)
-		if search
-			find(:all, :conditions => ['name LIKE ? OR email LIKE ?', "%#{search}%", "%#{search}%"], :order => 'name')
-  		else
-    		find(:all, :order => 'name')
-  		end
+	def self.search(search, page)
+		paginate :per_page => 5, :page => page, 
+				 :conditions => ['name LIKE ? OR email LIKE ?', "%#{search}%", "%#{search}%"], 
+				 :order => 'name'
 	end
 end

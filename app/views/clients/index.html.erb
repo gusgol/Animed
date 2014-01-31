@@ -1,4 +1,5 @@
 
+
 <div class="animed-content-client">
 	<%= form_tag clients_path, :method => 'get', :class => "animed-search-form", :role => "form" do %>
 		
@@ -34,6 +35,7 @@
 	    </div>
 	   <% end %> 
 	<% end %>
+	<%= will_paginate @clients %>
 </div>
 
 
