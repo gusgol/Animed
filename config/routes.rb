@@ -1,10 +1,12 @@
 Animed::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :skip => [:registrations, :sessions]
   resources :services
 
   resources :animals
 
   resources :clients
+
+  resources :users
 
 
 
@@ -18,8 +20,9 @@ Animed::Application.routes.draw do
   root :to => redirect('/login')
 
   as :user do
-    get "/login" => "devise/sessions#new", :as => :login
-    get "/logout" => "devise/sessions#destroy", :as => :logout
+    get "/login" => "devise/sessions#new", :as => :new_user_session
+    post "/login" => "devise/sessions#create", :as => :user_session
+    get "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
   end
 
 

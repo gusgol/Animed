@@ -1,27 +1,18 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ANIMED
 
-Things you may want to cover:
+Application designed to manage and store clients, animals and services of a petshop/veterinary clinic
 
-* Ruby version
+* Ruby version 
+	
+	ruby 1.9.3p484 (2013-11-22) [i386-mingw32]
 
-* System dependencies
+* Author
+	Gustavo Goldhardt
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Date created
+	January 2014
 
 
 Please feel free to use a different markup language if you do not plan to run
