@@ -1,7 +1,15 @@
-<h1>User</h1>
-
+<h1 class="animed-h1-title">Detalhes</h1>
+</br>
+<div class="well">
+<p><strong>Nome:</strong> <%= @user.first_name %></p>
+<p><strong>Sobrenome:</strong> <%= @user.last_name %></p>
+<p><strong>Tipo:</strong> <%= @user.role %></p>
 <p><strong>Email:</strong> <%= @user.email %></p>
+<p><strong>Username:</strong> <%= @user.user_name %></p>
+</div>
 
-<%= link_to 'All Users', users_path %> |
-<%= link_to 'Edit User', edit_user_path(@user) %> |
-<%= link_to 'Delete User', user_path(@user), :method => 'delete', :confirm => 'Are you sure?' %>
+
+
+<%= link_to 'Usuários', users_path %> |
+<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Deletar', user_path(@user), :method => 'delete', :confirm => 'Tem certeza?' %>

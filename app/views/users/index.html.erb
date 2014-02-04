@@ -1,23 +1,38 @@
-<h1>Users</h1>
+<div class="well">
+  <a href="/users/<%= current_user.id %>"><strong style = "font-size: 1.5em"> Olá, <%= current_user.first_name %></strong></a>
+  <%= link_to edit_user_path(current_user) do %>
+    <button type="button" class="btn btn-info" style="float: right">Trocar Senha</button>
+  <% end %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
+<% if current_user.role == "Admin" %>
+  <h1 class="animed-h1-title">Usuários</h1>
+  </br>
+  <table class="table table-condensed table-bordered">
+    <thead>
       <tr>
-        <td><%= link_to user.email, user %></td>
-        <td>
-          <%= link_to 'Edit', edit_user_path(user) %>
-          <%= link_to 'Delete', user_path(user), :method => 'delete', :confirm => 'Are you sure?' %>
-        </td>
+        <th>#</th>
+        <th>Nome</th>
+        <th class="animed-service-hide">Usuário</th>
+        <th>Tipo</th>
+        <th class="animed-service-hide">E-mail</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<%= link_to 'New User', new_user_path %>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr class= "animed-animal-table" onclick="location.href='/users/<%= user.id %>'">
+          <td><%= user.id %></td>
+          <td><%= user.first_name %> <%= user.last_name %></td>
+          <td class="animed-service-hide"><%= user.user_name %></td>
+          <td><%= user.role %></td>
+          <td class="animed-service-hide"><%= user.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to (new_user_path) do %>
+      <button type="button" class="btn btn-default btn-lg animed-btn"><i class = "fa fa-plus"></i> Adicionar</button>
+  <% end %>
+<% end %>

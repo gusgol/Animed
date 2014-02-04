@@ -1,4 +1,4 @@
-<%= form_for @user do |f| %>
+<%= form_for @user, :html => {:class => "form-horizontal", :role => "form"} do |f| %>
   <% if @user.errors.any? %>
     <div class="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,57 +11,58 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %>
-    <div class="controls">
-      <%= f.text_field :first_name %>
+  <div class="form-group">
+    <%= f.label "Nome", :class => "col-sm-2 control-label animed-form-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :first_name, :class => "form-control" %>
     </div>
   </div>
 
-  <div class="field">
-    <%= f.label :last_name %>
-    <div class="controls">
-      <%= f.text_field :last_name %>
+  <div class="form-group">
+    <%= f.label "Sobrenome", :class => "col-sm-2 control-label animed-form-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :last_name, :class => "form-control" %>
     </div>
   </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <div class="controls">
-      <%= f.email_field :email %>
+  <div class="form-group">
+    <%= f.label "Tipo", :class => "col-sm-2 control-label animed-form-label" %>
+    <div class="col-sm-10">
+      <%= f.select :role, options_for_select(%w[Admin Basico]), {} , :class => "form-control" %>
     </div>
   </div>
 
-  <div class="field">
-    <%= f.label :user_name %>
-    <div class="controls">
-      <%= f.text_field :user_name %>
+  <div class="form-group">
+    <%= f.label "E-mail", :class => "col-sm-2 control-label animed-form-label" %>
+    <div class="col-sm-10">
+      <%= f.email_field :email, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Username", :class => "col-sm-2 control-label animed-form-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :user_name, :class => "form-control" %>
     </div>
   </div>
 
 
-  <div class="field">
-    <%= f.label :password, "Password" %>
-    <div class="controls">
-      <%= f.password_field :password %>
+  <div class="form-group">
+    <%= f.label "Senha", :class => "col-sm-2 control-label animed-form-label" %>
+    <div class="col-sm-10">
+      <%= f.password_field :password, :class => "form-control" %>
     </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <div class="controls">
-      <%= f.password_field :password_confirmation %>
+  <div class="form-group">
+    <%= f.label "Confirmação de Senha", :class => "col-sm-2 control-label animed-form-label" %>
+    <div class="col-sm-10">
+      <%= f.password_field :password_confirmation, :class => "form-control" %>
     </div>
   </div>
+  <%= f.submit "Salvar", :class => "btn btn-default btn-lg animed-btn" %>
+  <%= link_to (users_path) do %>
+    <button type="button" class="btn btn-default btn-lg animed-btn animed-btn-back">Voltar</button>
+  <% end %>
 
-  <div class="field">
-    <%= f.label :role %>
-    <div class="controls">
-      <%= f.text_field :role %>
-    </div>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
