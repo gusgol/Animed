@@ -1,45 +1,35 @@
+<h1 class="animed-h1-title">Detalhes</h1></br>
+
 <p id="notice"><%= notice %></p>
 
-<div class="animed-animal-content">
-  <div class="animed-animal-avatar">
-    <% if @animal.image_url.present? %>
-      <%= image_tag(@animal.image_url) %>
-    <% else %>
-      <%= image_tag("animal_default.jpg") %>
-    <% end %>
+<div class="row well animal-card">
+  <a href="<%= @animal.image_url %>">
+    <div class="thumbnail col-md-4 animal-avatar col-sm-4 ">
+      <% if @animal.image_url.present? %>
+        <%= image_tag(@animal.image_url) %>
+       <% else %>
+        <%= image_tag("animal_default.jpg") %>
+      <% end %>
+    </div>
+  </a>
+  <div class="col-md-8 animal-content col-sm-8 ">
+    <ul class="list-group">
+      <li class="list-group-item"><strong>Nome: </strong><%= @animal.name %></li>
+      <li class="list-group-item"><strong>Espécie: </strong><%= @animal.species %></li>
+      <li class="list-group-item"><strong>Raça: </strong><%= @animal.race %></li>
+      <li class="list-group-item"><strong>Nascimento: </strong><%= @animal.birthdate.strftime("%d/%m/%Y") %></li>
+      <li class="list-group-item"><strong>Dono: </strong><%= @animal.client.name %></li>
+    </ul>
   </div>
-  <div class="animed-animal-info">
 
-    <p>
-    <strong>Nome:</strong>
-    <%= @animal.name %>
-    </p>
-
-    <p>
-    <strong>Espécie:</strong>
-    <%= @animal.species %>
-    </p>
-
-    <p>
-    <strong>Raça:</strong>
-    <%= @animal.race %>
-    </p>
-
-    <p>
-    <strong>Nascimento:</strong>
-    <%= @animal.birthdate.strftime("%d/%m/%y") %>
-    </p>
-
-
-    <p>
-    <strong>Descrição:</strong>
-    <%= @animal.description %>
-    </p>
-  </div>
 </div>
-<br>
 
+<div class="row list-group-item">
+  <h4 class="list-group-item-heading">Descrição</h4>
+  <p class="list-group-item-text"><%= @animal.description %></p>
+</div>
 
+</br>
 
 
 <%= link_to 'Editar', { :action => 'edit', :id => @animal, :client_id => @animal.client_id } %> |
@@ -73,7 +63,7 @@
       <tr class= "animed-animal-table" onclick="location.href='/services/<%= service.id %>'">
           <td><%= service.name %></td>
           <td><%= service.animal.name %></td>
-          <td><%= service.service_date.strftime("%d/%m/%y") %></td>
+          <td><%= service.service_date.strftime("%d/%m/%Y") %></td>
           <td><%= service.description %></td>
           <td><%= number_to_currency(service.price, :unit => "R$") %></td>
       </tr>
