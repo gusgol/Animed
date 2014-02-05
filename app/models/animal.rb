@@ -1,6 +1,6 @@
 class Animal < ActiveRecord::Base
 	belongs_to :client
-	has_many :services
+	has_many :services, dependent: :destroy
 	
 	mount_uploader :image_url, ImageUrlUploader
 
