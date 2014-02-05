@@ -54,7 +54,7 @@
         <th>Nome</th>
         <th>Animal</th>
         <th>Data</th>
-        <th>Descrição</th>
+        <th class="animed-service-hide">Descrição</th>
         <th>Preço</th>
       </tr>
   </thead>  
@@ -64,7 +64,7 @@
           <td><%= service.name %></td>
           <td><%= service.animal.name %></td>
           <td><%= service.service_date.strftime("%d/%m/%Y") %></td>
-          <td><%= service.description %></td>
+          <td class="animed-service-hide"><%= service.description %></td>
           <td><%= number_to_currency(service.price, :unit => "R$") %></td>
       </tr>
     <% end %>
