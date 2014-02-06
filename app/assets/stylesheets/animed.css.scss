@@ -5,6 +5,9 @@ body {
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 
+.animed-nav-menu {
+
+}
 
 .animed-h1-title {
   color: gray;
@@ -36,7 +39,9 @@ body {
   border-top: 1px solid #e5e5e5;
 }
 
-
+.animed-icon:hover {
+  color: #E8870C;
+}
 
 .animed-menu {
   font-size: 1.5em;
@@ -170,7 +175,7 @@ body {
   }
 
   .animed-search-field{
-    width: 78%;
+    width: 75%;
   }
   .animed-searc-label {
     display: none;
@@ -189,7 +194,7 @@ body {
   }
 
   .animed-search-field { 
-    width: 75%;
+    width: 65%;
   }
 
 }

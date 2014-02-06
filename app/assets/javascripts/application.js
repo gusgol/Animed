@@ -18,8 +18,14 @@
 // Loads all Bootstrap javascripts
 //= require bootstrap
 
+
 $(document).ready(function(){
-	$( "#animed-logo" ).click(function() {
-		alert( "Handler for .click() called." );
+	$("#animed-logo").click(function() {
+		var sDisplay = $(".animed-nav-menu").css("display");
+		if(sDisplay=="block") {
+			$(".animed-nav-menu").css("display","none");
+		} else {
+			$(".animed-nav-menu").css("display","block");
+		}
 	});
 });
