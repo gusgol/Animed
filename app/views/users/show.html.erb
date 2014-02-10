@@ -3,6 +3,7 @@
 <div class="well">
 <p><strong>Nome:</strong> <%= @user.first_name %></p>
 <p><strong>Sobrenome:</strong> <%= @user.last_name %></p>
+<p><strong>Último login:</strong> <%= @user.last_sign_in_at.in_time_zone("Brasilia").strftime("%d/%m/%Y - %H:%M:%S") %></p>
 <p><strong>Tipo:</strong> <%= @user.role %></p>
 <p><strong>Email:</strong> <%= @user.email %></p>
 <p><strong>Username:</strong> <%= @user.user_name %></p>

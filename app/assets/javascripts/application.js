@@ -29,3 +29,32 @@ $(document).ready(function(){
 		}
 	});
 });
+
+
+//Method created to capitalize the inputs provided by the user
+function capitalizeField(form, field) {
+	var x = document.forms[form][field].value;
+	var xlist = x.split(" ");
+	var result = "";
+	for(var i=0; i < xlist.length; i++) {
+		var xcap = xlist[i].replace(/^[a-z]/, function(m){ return m.toUpperCase() });
+		result = result + xcap + " ";
+	}
+	document.forms[form][field].value = result;
+}
+
+function cpfUpdate() {
+	var x = document.forms["client_form"]["cpfValue"].value;
+	x=x.replace(/\D/g,"");
+	x=x.replace(/(\d{3})(\d)/,"$1.$2");
+	x=x.replace(/(\d{3})(\d)/,"$1.$2");
+	x=x.replace(/(\d{3})(\d{1,2})$/,"$1-$2");
+	document.forms["client_form"]["cpfValue"].value = x;
+}
+
+function cepUpdate(){
+	var x = document.forms["client_form"]["cepValue"].value;
+	x=x.replace(/D/g,"");
+	x=x.replace(/^(\d{5})(\d)/,"$1-$2");
+	document.forms["client_form"]["cepValue"].value = x;
+} 
